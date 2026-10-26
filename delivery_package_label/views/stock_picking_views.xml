@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Jarsa
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <record id="view_picking_withcarrier_out_form" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.package.label</field>
+        <field name="model">stock.picking</field>
+        <field
+            name="inherit_id"
+            ref="stock_delivery.view_picking_withcarrier_out_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="/form/header/button[last()]" position="after">
+                <field name="package_label_generation" invisible="1" />
+                <field name="package_label_missing" invisible="1" />
+                <button
+                    name="action_generate_package_labels"
+                    type="object"
+                    string="Create Carrier Labels"
+                    invisible="package_label_generation in (False, 'validate') or not package_label_missing or package_label_queued or state not in ('assigned', 'done')"
+                />
+            </xpath>
+            <xpath expr="//group[@name='carrier_data']" position="inside">
+                <field
+                    name="package_label_queued"
+                    invisible="not package_label_queued"
+                />
+                <field
+                    name="package_label_error"
+                    invisible="not package_label_error"
+                    class="text-danger"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
