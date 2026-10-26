@@ -1,0 +1,183 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* delivery_package_label
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 21:42+0000\n"
+"PO-Revision-Date: 2026-10-26 21:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/delivery_carrier.py:0
+msgid ""
+"%(carrier)s cannot create one label per package: keep its carrier labels on "
+"validation."
+msgstr ""
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid ""
+"%(picking)s has no package without carrier label: put the goods in packages "
+"first."
+msgstr ""
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid ""
+"%s is not ready: carrier labels are created for deliveries ready or done."
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__package_label_generation
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_generation
+msgid "Carrier Labels"
+msgstr ""
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Carrier labels of every package created with %(carrier)s."
+msgstr ""
+
+#. module: delivery_package_label
+#: model_terms:ir.ui.view,arch_db:delivery_package_label.view_picking_withcarrier_out_form
+msgid "Create Carrier Labels"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.actions.server,name:delivery_package_label.ir_cron_package_label_ir_actions_server
+msgid "Delivery: create carrier labels per package"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__display_name
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__id
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_move_line__id
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__id
+msgid "ID"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__background
+msgid "In background, after validation"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__on_demand
+msgid "On demand, when the delivery is ready"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__validate
+msgid "On validation"
+msgstr ""
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_move_line.py:0
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Package %(package)s: %(error)s"
+msgstr ""
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Package %(package)s: label %(ref)s created with %(carrier)s."
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_error
+msgid "Package Label Error"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_missing
+msgid "Package Label Missing"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_queued
+msgid "Package Label Queued"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__package_label_support
+msgid "Package Label Support"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_tracking_required
+msgid "Package Tracking Required"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model,name:delivery_package_label.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model,name:delivery_package_label.model_delivery_carrier
+msgid "Shipping Methods"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,help:delivery_package_label.field_delivery_carrier__package_label_support
+msgid "The carrier integration creates one label per package."
+msgstr ""
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid ""
+"The carrier labels of %(count)s package(s) are being created in background."
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,help:delivery_package_label.field_stock_picking__package_label_queued
+msgid "The carrier labels of the packages are being created in background."
+msgstr ""
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Tracking references: %s"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model,name:delivery_package_label.model_stock_picking
+msgid "Transfer"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__pack
+msgid "When each package is packed"
+msgstr ""
+
+#. module: delivery_package_label
+#: model:ir.model.fields,help:delivery_package_label.field_delivery_carrier__package_label_generation
+#: model:ir.model.fields,help:delivery_package_label.field_stock_picking__package_label_generation
+msgid ""
+"When the carrier labels of a delivery are created.\n"
+"On validation: the standard flow, every label when the delivery is validated.\n"
+"On demand: a button creates the labels of the packages once the delivery is ready; validation creates the missing ones.\n"
+"In background: validation is immediate and a scheduled action creates one label per package, for deliveries with many packages.\n"
+"When each package is packed: the label of each package is created and printed when the package is packed.\n"
+"Except on validation, the carrier integration must create labels per package."
+msgstr ""

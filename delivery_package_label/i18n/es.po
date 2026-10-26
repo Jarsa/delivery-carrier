@@ -1,0 +1,190 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* delivery_package_label
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-26 21:42+0000\n"
+"PO-Revision-Date: 2026-10-26 21:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Language: es\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/delivery_carrier.py:0
+msgid ""
+"%(carrier)s cannot create one label per package: keep its carrier labels on "
+"validation."
+msgstr "%(carrier)s no puede crear una etiqueta por paquete: deje sus etiquetas de transportista al validar."
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid ""
+"%(picking)s has no package without carrier label: put the goods in packages "
+"first."
+msgstr "%(picking)s no tiene paquetes sin etiqueta de transportista: primero ponga la mercancía en paquetes."
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid ""
+"%s is not ready: carrier labels are created for deliveries ready or done."
+msgstr "%s no está lista: las etiquetas de transportista se crean para entregas listas o hechas."
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__package_label_generation
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_generation
+msgid "Carrier Labels"
+msgstr "Etiquetas de transportista"
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Carrier labels of every package created with %(carrier)s."
+msgstr "Etiquetas de transportista de todos los paquetes creadas con %(carrier)s."
+
+#. module: delivery_package_label
+#: model_terms:ir.ui.view,arch_db:delivery_package_label.view_picking_withcarrier_out_form
+msgid "Create Carrier Labels"
+msgstr "Crear etiquetas de transportista"
+
+#. module: delivery_package_label
+#: model:ir.actions.server,name:delivery_package_label.ir_cron_package_label_ir_actions_server
+msgid "Delivery: create carrier labels per package"
+msgstr "Entregas: crear etiquetas de transportista por paquete"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__display_name
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_move_line__display_name
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__id
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_move_line__id
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__id
+msgid "ID"
+msgstr "ID"
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__background
+msgid "In background, after validation"
+msgstr "En segundo plano, después de validar"
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__on_demand
+msgid "On demand, when the delivery is ready"
+msgstr "A petición, cuando la entrega está lista"
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__validate
+msgid "On validation"
+msgstr "Al validar"
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_move_line.py:0
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Package %(package)s: %(error)s"
+msgstr "Paquete %(package)s: %(error)s"
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Package %(package)s: label %(ref)s created with %(carrier)s."
+msgstr "Paquete %(package)s: etiqueta %(ref)s creada con %(carrier)s."
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_error
+msgid "Package Label Error"
+msgstr "Error de etiqueta de paquete"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_missing
+msgid "Package Label Missing"
+msgstr "Falta etiqueta de paquete"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_label_queued
+msgid "Package Label Queued"
+msgstr "Etiquetas en proceso"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_delivery_carrier__package_label_support
+msgid "Package Label Support"
+msgstr "Soporta etiqueta por paquete"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,field_description:delivery_package_label.field_stock_picking__package_tracking_required
+msgid "Package Tracking Required"
+msgstr "Referencia por paquete requerida"
+
+#. module: delivery_package_label
+#: model:ir.model,name:delivery_package_label.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Movimientos de producto (línea de movimiento de existencias)"
+
+#. module: delivery_package_label
+#: model:ir.model,name:delivery_package_label.model_delivery_carrier
+msgid "Shipping Methods"
+msgstr "Métodos de envío"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,help:delivery_package_label.field_delivery_carrier__package_label_support
+msgid "The carrier integration creates one label per package."
+msgstr "La integración del transportista crea una etiqueta por paquete."
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid ""
+"The carrier labels of %(count)s package(s) are being created in background."
+msgstr "Las etiquetas de transportista de %(count)s paquete(s) se están creando en segundo plano."
+
+#. module: delivery_package_label
+#: model:ir.model.fields,help:delivery_package_label.field_stock_picking__package_label_queued
+msgid "The carrier labels of the packages are being created in background."
+msgstr "Las etiquetas de transportista de los paquetes se están creando en segundo plano."
+
+#. module: delivery_package_label
+#. odoo-python
+#: code:addons/delivery_package_label/models/stock_picking.py:0
+msgid "Tracking references: %s"
+msgstr "Referencias de rastreo: %s"
+
+#. module: delivery_package_label
+#: model:ir.model,name:delivery_package_label.model_stock_picking
+msgid "Transfer"
+msgstr "Traslado"
+
+#. module: delivery_package_label
+#: model:ir.model.fields.selection,name:delivery_package_label.selection__delivery_carrier__package_label_generation__pack
+msgid "When each package is packed"
+msgstr "Al empacar cada paquete"
+
+#. module: delivery_package_label
+#: model:ir.model.fields,help:delivery_package_label.field_delivery_carrier__package_label_generation
+#: model:ir.model.fields,help:delivery_package_label.field_stock_picking__package_label_generation
+msgid ""
+"When the carrier labels of a delivery are created.\n"
+"On validation: the standard flow, every label when the delivery is validated.\n"
+"On demand: a button creates the labels of the packages once the delivery is ready; validation creates the missing ones.\n"
+"In background: validation is immediate and a scheduled action creates one label per package, for deliveries with many packages.\n"
+"When each package is packed: the label of each package is created and printed when the package is packed.\n"
+"Except on validation, the carrier integration must create labels per package."
+msgstr ""
+"Cuándo se crean las etiquetas de transportista de una entrega.\n"
+"Al validar: el flujo estándar, todas las etiquetas al validar la entrega.\n"
+"A petición: un botón crea las etiquetas de los paquetes cuando la entrega está lista; al validar se crean las que falten.\n"
+"En segundo plano: la validación es inmediata y una acción planificada crea una etiqueta por paquete, para entregas con muchos paquetes.\n"
+"Al empacar cada paquete: la etiqueta de cada paquete se crea e imprime al empacarlo.\n"
+"Excepto al validar, la integración del transportista debe crear etiquetas por paquete."
