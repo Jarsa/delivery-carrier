@@ -3,7 +3,7 @@
 {
     "name": "Delivery Package Tracking",
     "summary": "One tracking reference per package of a delivery",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Delivery",
     "website": "https://github.com/OCA/delivery-carrier",
     "author": "Jarsa, Odoo Community Association (OCA)",

@@ -22,22 +22,16 @@ class StockPicking(models.Model):
     )
     package_label_error = fields.Text(copy=False, readonly=True)
     package_label_missing = fields.Boolean(compute="_compute_package_label_missing")
-    # labels created by the carrier integration replace the manual reference
-    package_tracking_required = fields.Boolean(
-        related=False, compute="_compute_package_tracking_required"
-    )
 
-    @api.depends(
-        "carrier_id.package_tracking_required",
-        "carrier_id.package_label_generation",
-        "carrier_id.integration_level",
-    )
+    @api.depends("carrier_id.package_label_generation")
     def _compute_package_tracking_required(self):
-        for picking in self:
-            picking.package_tracking_required = (
-                picking.carrier_id.package_tracking_required
-                and not picking._package_label_ready()
-            )
+        return super()._compute_package_tracking_required()
+
+    def _carrier_creates_tracking_refs(self):
+        # labels created per package by this module replace the manual reference
+        return super()._carrier_creates_tracking_refs() or bool(
+            self._package_label_ready()
+        )
 
     @api.depends(
         "move_line_ids.result_package_id.carrier_tracking_ref", "package_label_queued"

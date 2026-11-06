@@ -4,7 +4,7 @@
     "name": "Delivery Package Label",
     "summary": "Carrier label per package: on validation, on demand, in background "
     "or when the package is packed",
-    "version": "19.0.1.0.0",
+    "version": "19.0.1.0.1",
     "category": "Delivery",
     "website": "https://github.com/OCA/delivery-carrier",
     "author": "Jarsa, Odoo Community Association (OCA)",
