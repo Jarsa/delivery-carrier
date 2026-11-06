@@ -55,6 +55,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Leave out the addons that depend on Odoo Enterprise
+        run: rm -r delivery_package_label_iot
       - name: Install addons and dependencies
         run: oca_install_addons
       - name: Check licenses
