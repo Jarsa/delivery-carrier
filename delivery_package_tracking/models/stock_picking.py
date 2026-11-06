@@ -15,8 +15,24 @@ class StockPicking(models.Model):
         readonly=False,
     )
     package_tracking_required = fields.Boolean(
-        related="carrier_id.package_tracking_required",
+        compute="_compute_package_tracking_required",
+        help="The packages of this delivery need a tracking reference typed by "
+        "hand before validating: the carrier asks for one per package and its "
+        "integration does not create them.",
     )
+
+    @api.depends(
+        "carrier_id.package_tracking_required",
+        "carrier_id.delivery_type",
+        "carrier_id.integration_level",
+        "picking_type_code",
+    )
+    def _compute_package_tracking_required(self):
+        for picking in self:
+            picking.package_tracking_required = bool(
+                picking.carrier_id.package_tracking_required
+                and not picking._carrier_creates_tracking_refs()
+            )
 
     @api.depends("move_line_ids.result_package_id.carrier_tracking_ref")
     def _compute_carrier_tracking_ref(self):
@@ -44,6 +60,19 @@ class StockPicking(models.Model):
             trackers = [tracker for tracker in trackers if tracker[1]]
             picking.carrier_tracking_url = json.dumps(trackers) if trackers else False
         return res
+
+    def _carrier_creates_tracking_refs(self):
+        """Deliveries whose carrier integration creates the tracking references
+        itself when the delivery is validated (``stock_delivery`` sends them to
+        the shipper then): the user has nothing to capture beforehand."""
+        self.ensure_one()
+        carrier = self.carrier_id
+        return bool(
+            carrier
+            and self.picking_type_code == "outgoing"
+            and carrier.delivery_type not in ("fixed", "base_on_rule")
+            and carrier.integration_level == "rate_and_ship"
+        )
 
     def _get_package_tracking_refs(self):
         self.ensure_one()

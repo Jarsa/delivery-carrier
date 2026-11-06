@@ -1,6 +1,7 @@
 # Copyright 2026 Jarsa
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 import json
+from unittest.mock import patch
 
 from odoo import Command
 from odoo.exceptions import UserError
@@ -147,3 +148,22 @@ class TestDeliveryPackageTracking(TransactionCase):
         self._pack_each_line(internal)
         internal.button_validate()
         self.assertEqual(internal.state, "done")
+
+    def test_carrier_integration_creates_the_references(self):
+        """A carrier whose integration creates the waybills when the delivery
+        is validated fills the references itself: nothing to type beforehand.
+        Fixed-price carriers have no integration and keep asking for them."""
+        picking = self._delivery()
+        self._pack_each_line(picking)
+        self.assertFalse(picking._carrier_creates_tracking_refs())
+        self.assertTrue(picking.package_tracking_required)
+        with patch.object(
+            type(picking),
+            "_carrier_creates_tracking_refs",
+            autospec=True,
+            return_value=True,
+        ):
+            picking.invalidate_recordset(["package_tracking_required"])
+            self.assertFalse(picking.package_tracking_required)
+            picking.button_validate()
+        self.assertEqual(picking.state, "done")
