@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Jarsa
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <!-- shell report, to assign the IoT printer of the package labels -->
+    <template id="report_package_labels" />
+    <record id="action_report_package_labels" model="ir.actions.report">
+        <field name="name">Package Carrier Labels</field>
+        <field name="model">stock.package</field>
+        <field
+            name="report_name"
+        >delivery_package_label_iot.report_package_labels</field>
+        <field
+            name="print_report_name"
+        >'Empty Report - Used for assigning IoT printer'</field>
+        <field name="binding_model_id" ref="stock.model_stock_package" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
